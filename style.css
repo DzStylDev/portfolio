@@ -53,8 +53,8 @@ ul {
 @media screen and (max-width: 768px) {
   p {
     color: mintcream;
-    background-color: var(--couleur-titre);
     text-align: center;
+    font-size: smaller;
   }
   .container {
     max-width: 1200px;
@@ -185,6 +185,7 @@ h1 {
 }
 h2 {
   color: mintcream;
+  background-color: rgb(64 58 181);
 }
 #metier {
   background-color: #f2f5f2;
@@ -348,4 +349,8 @@ a {
   border: 1px solid black;
   margin: auto;
   padding: 0.5em;
+}
+iconify-icon {
+  width: 100px;
+  height: auto;
 }
