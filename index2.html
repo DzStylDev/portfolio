@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style2.css" />
+    <title>Portfolio</title>
+
+     <!-- // function emailSend(){
+      //     let textFile = null;
+      //     let data = new Blob([
+      //       "To:dzstyler@outlook.fr",
+      //       "Subject: Email Javascript",
+      //       'X-Unsent: 1',
+      //       'Content-Type: text/html',
+      //       "<!DOCTYPE html><html><head></head><body><h1>Simple Email</h1></body></html>"
+      //     ], { type: 'text/plain'});
+
+      //     if(textFile !== null){
+      //       window.URL.revokeObjectURL(textFile);
+      //     }
+      //     textFile = window.URL.createObjectURL(data);
+
+      //     let a = document.createElement('a');
+      //     let linkText = document.createTextNode('fileLink');
+      //     a.appendChild(linkText);
+      //     a.href = textFile;
+      //     a.id = 'fileLink';
+      //     a.download = "Email Javascript.eml";
+      //     a.style.visibility = 'hidden';
+      //     document.body.appendChild(a);
+      //     document.getElementById('fileLink').click();
+          
+      //     return textFile;
+      // }
+      -->   
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+      <script type="text/javascript">
+      
+      (function(){
+      emailjs.init("FzLvEiKzHsgugTxS4");
+   })();
+
+    function sendEmail(){
+      let params = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+      }
+
+      const serviceId = "";
+      const templateId = "";
+
+      emailjs.send(serviceId, templateId, params)
+      .then(res => {
+        document.getElementById('name').value = "",
+        document.getElementById('email').value = "",
+        document.getElementById('message').value = ""
+      })
+      .catch(err => console.log(err))
+    }
+  </script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="navbar" role="navigation">
+          <div class="logo">Amine Meddour</div>
+          <button class="burger">
+            <span class="bar"></span>
+          </button>
+          <div class="navbar-links">
+            <ul>
+              <li><a href="#about-me">A propos de moi</a></li>
+              <li><a href="#Where-can-i-be-found">Où me trouver</a></li>
+              <li><a href="#download-cv">Télécharger mon cv</a></li>
+              <li><a href="#my-compétences">Mes compétences</a></li>
+              <li><a href="#my-formation">Mes formations</a></li>
+              <li>
+                <a href="#my-experiences-pro"
+                  >Mes expériences professionnelles</a
+                >
+              </li>
+              <li><a href="#projets-cliquable">Mes projets</a></li>
+              <li><a href="#hobbies">Centres d'intérêts</a></li>
+              <li><a href="#langues">Langues</a></li>
+              <li><a href="#contactez-moi">Contactez-moi</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- section à propos de moi -->
+
+    <section id="about-me">
+      <div class="container">
+        <!-- div a propos de moi-->
+          <!-- présentation de vous , votre charactère , votre phrase d'accroche , photo de qualité professionnelle  -->
+
+            
+        <div class="me">
+            
+          <div id="a_propos_de_moi">
+              <h1>A propos de moi</h1>
+  
+              <div id="photo-professionnelle">
+                <img
+                  id="img-pro"
+                  src="./assets/images/pngwing.com.png"
+                  alt=""
+                  srcset=""
+                />
+              </div>
+  
+              <h2 id="metier">DEVELOPPEUR WEB FULL STACK</h2>
+  
+              <div id="profil">
+                <p>
+                  j'ai 25 ans , je développe depuis 4 ans et je suis à la première
+                  année de web@academie , j'ai commencé par développer des plugins
+                  minecraft, des bots discord et quelques sites (back-end) .
+                  Travailleur , autonome et motivé , possèdant une très bonne
+                  faculté d'adaptation et un sens relationnel développé
+                </p>
+              </div>
+  
+              <div id="download-cv-div">
+                <a href="./assets/PUISSANCE 4 Site de jeu stratégique Développé en 1 semaine Projet individuel JS, HTML , CSS.pdf" download="CV__meddour_amine.pdf"><button>Télécharger mon cv</button></a>
+              </div>
+  
+          </div>
+          
+          <div id="experiences-pro-div">
+            <h1>Mes expériences professionnelles</h1>
+            <div>
+              2018 - Stage de 8 semaines en Electrotechnique à Energilec,
+              Saint-Cloud . Compréhension d'un schéma éléctrique
+            </div>
+            <div>
+              2017 - Stage de 8 semaines en Electrotechnique à Sarl Satlec, Paris
+              . Installation des lampes . Cablage éléctrique
+            </div>
+            <div>
+              2015 - Stage de 6 semaines en Electronique à NK Electronique, Paris
+              . Démontage d'ordinateurs et de télévisions
+            </div>
+            <div>
+              2015 - Stage de 6 semaines en électrotechnique à SBD (Self blanc
+              drug), Paris . Réparation des laveries
+            </div>
+          </div>
+
+            
+        </div>
+          
+        <div class="me">
+            <!-- présentation de vous , votre charactère , votre phrase d'accroche , photo de qualité professionnelle  -->
+  
+            <div id="my-coordinates">
+              <h1>Mes coordonnées</h1>
+              <div class="coordonnées">
+                <div>amine.meddour@epitech.eu</div>
+                <!-- <div>0781604614</div> -->
+              </div>
+  
+              <h1>Mes réseaux professionnelles</h1>
+  
+              <div id="my-professional-social-network">
+                
+                <div class="icons-center">
+                  <h2>Indee</h2>
+                  <iconify-icon
+                    icon="simple-icons:indeed"
+                    style="color: #0c32a7"
+                  ></iconify-icon>
+                </div>
+  
+                <div class="icons-center">
+                  <h2>linkedin</h2>
+                  <iconify-icon icon="devicon:linkedin"></iconify-icon>
+                </div>
+  
+                <div class="icons-center">
+                  <h2>Github</h2>
+                  <a href="https://github.com/DzStylDev"><iconify-icon icon="devicon:github"></iconify-icon></a>
+                </div>
+              </div>
+  
+              <div id="findEmploi">
+                <h1>Ma recherche d'emploi actuelle</h1>
+                <div>Développeur Full Stack</div>
+              </div>
+  
+            </div>
+  
+            
+            <div id="my-formation">
+              <h1>Mes formations</h1>
+              <div>2022 / 2024 : DEVELOPPEUR-INTEGRATEUR WEB (Titre 5 RNCP - BAC +2) Web@cademie by EPITECH - Paris</div>
+              <div>2018 / 2019 : BAC PRO Electrotechnique Lycée Louis ARDMAND - Paris</div>
+              <div>2016 / 2017 : BEP Electrotechnique Lycée Louis ARDMAND - Paris</div>
+            </div>
+            
+        </div>
+  
+        <div class="me">
+            
+            <div id="my-compétences">
+              <h1>Mes compétences</h1>
+                
+              <ul class="compétences">
+                
+                <!-- Icones groupe 1 -->
+
+                <!-- <div id="icons_g1"> -->
+
+                  <div class="langues-dev">
+                    <iconify-icon icon="logos:react"></iconify-icon>
+                    <h2>React</h2>
+                  </div>
+
+                  <div class="langues-dev">
+                    <iconify-icon icon="skill-icons:laravel-light"></iconify-icon>
+                    <h2>Laravel</h2>
+                  </div>
+
+                  <div class="langues-dev">
+                    <iconify-icon icon="devicon:php"></iconify-icon>
+                    <h2>PHP</h2>
+                  </div>
+
+                  <div class="langues-dev">
+                    <iconify-icon icon="vscode-icons:file-type-light-symfony"></iconify-icon>
+                    <h2>Symfony</h2>
+                  </div>
+
+                  <div class="langues-dev">
+                    <iconify-icon icon="logos:html-5"></iconify-icon>
+                    <h2>HTML</h2>
+                  </div>
+
+                  <div class="langues-dev">
+                    <iconify-icon icon="logos:css-3"></iconify-icon>
+                    <h2>CSS</h2>
+                  </div>
+
+                  <div class="langues-dev">
+                    <iconify-icon icon="logos:javascript"></iconify-icon>
+                    <h2>Javascript</h2>
+                  </div>
+
+                  <div class="langues-dev">
+                    <iconify-icon icon="vscode-icons:file-type-typescript-official"></iconify-icon>
+                    <h2>Typescript</h2>
+                  </div>
+
+                  <div class="langues-dev">
+                    <iconify-icon icon="logos:bootstrap"></iconify-icon>
+                    <h2>Bootstrap</h2>
+                  </div>
+                  <div class="langues-dev">
+                    <iconify-icon icon="logos:git"></iconify-icon> 
+                    <h2>Git</h2>
+                  </div>
+              </ul>
+  
+            </div>
+            <div id="hobbies">
+              <h1>Centre d'intérêts</h1>
+              <div>Informatique</div>
+              <div>Sport (Football , karaté , taekwondo)</div>
+            </div>
+            <div id="langues">
+              <h1>Langues</h1>
+              <div>Anglais : intermédiaire</div>
+              <div>Arabe : courant</div>
+            </div>
+            
+        </div>
+  
+      </div>
+
+        <!-- ou me trouver -->
+        
+      </div>
+    </section>
+
+    <section id="my-experiences-pro">
+
+      <div class="container">
+        
+        <div class="me">
+
+          <div id="experiences-pro-div">
+            <h1>Mes Projets</h1>
+
+            <div id="projects">
+              
+              <div class="projets-cliquable-div" id="cssgenerator">
+                <div class="titre-projets">Css Generator</div>
+                <div class="description-projets">Création d'un sprite d'images combiné en php</div>
+                <div class="screen-projets">
+                  <img src="./assets/images/sprite.png" alt="sprite" srcset="">
+                </div>
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-501-PAR-1-1-cssgenerator-amine.meddour">
+                  <iconify-icon icon="cib:github"></iconify-icon>
+                </a>
+              </div>
+              <div class="projets-cliquable-div">
+                <div class="titre-projets">MyCinema</div>
+                <div class="description-projets">Création d'un cinema en MVC</div>
+                <div class="screen-projets">
+                  <img src="./assets/images/acceuil_mycinema.png" alt="" srcset="">
+                </div>
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-501-PAR-1-1-mycinema-amine.meddour">
+                  <iconify-icon icon="cib:github"></iconify-icon>
+                </a>
+              </div>
+              <div class="projets-cliquable-div">
+                <div class="titre-projets">myh5ai</div>
+                <div class="description-projets">Création d'un gestionnaire de fichier en PHP</div>
+                <div class="screen-projets">
+                  <img src="./assets/images/myh5ai.png" alt="" srcset="">
+                </div>
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-501-PAR-1-1-myh5ai-amine.meddour">
+                  <iconify-icon icon="cib:github"></iconify-icon>
+                </a>
+              </div>
+              <div class="projets-cliquable-div">
+                <div class="titre-projets">MyMeetic</div>
+                <div class="description-projets">Création d'un site de rencontre PHP</div>
+                <div class="screen-projets">
+                  <img src="./assets/images/acceuil_mymeetic.png" alt="" srcset="">
+                </div>
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-501-PAR-1-1-mymeetic-amine.meddour">
+                  <iconify-icon icon="cib:github"></iconify-icon>
+                </a>
+              </div>
+            </div>
+
+            <div id="projects">
+              <div class="projets-cliquable-div">
+                <div class="titre-projets">FreeAds</div>
+                <div class="description-projets">Création d'un site d'annonce avec le framework Laravel</div>
+                <div class="screen-projets">
+                  <img src="./assets/images/Freeads.png" alt="" srcset="">
+                </div>
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-502-PAR-2-2-FreeAds-amine.meddour">
+                  <iconify-icon icon="cib:github"></iconify-icon>
+                </a>
+              </div>
+              <div class="projets-cliquable-div">
+                <div class="titre-projets">PiePHP</div>
+                <div class="description-projets">Création d'un site en MVC</div>
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-502-PAR-2-2-PiePHP-amine.meddour">
+                  <iconify-icon icon="cib:github"></iconify-icon>
+                </a>
+              </div>
+              <div class="projets-cliquable-div">
+                  <div class="titre-projets">Quizz</div>
+                  <div class="description-projets">Création d'un quizz en groupe avec le framework symfony</div>
+                  <div class="screen-projets">
+                    <img src="assets/images/acceuil_myquizz.png" alt="" srcset="">
+                  </div>
+                  <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-502-PAR-2-2-Quiz-louisa.hadjili">
+                  <iconify-icon icon="cib:github"></iconify-icon>
+                </a>
+              </div>
+              <div class="projets-cliquable-div">
+                  <div class="titre-projets">Spotify</div>
+                  <div class="description-projets">Création d'un spotify avec l'api Swagger</div>
+                  <div class="screen-projets">
+                    <img src="./assets/images/listingAlbum_spotify.png" alt="" srcset="">
+                    <img src="./assets/images/détailAlbum_spotify.png" alt="" srcset="">
+                  </div>
+                  <a href="https://github.com/EpitechWebAcademiePromo2024/W-WEB-090-PAR-1-1-spotify-sabri.rehouni">
+                  <iconify-icon icon="cib:github"></iconify-icon>
+                </a>
+              </div>
+            </div>
+
+            <div id="projects">
+              <div class="projets-cliquable-div">
+                <div class="titre-projets">Wysiwyg</div>
+                <div class="description-projets">Création d'un éditeur de texte</div>
+                <div class="screen-projets">
+                  <img src="./assets/images/wysiwyg.png" alt="" srcset="">
+                </div>
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-WEB-090-PAR-1-1-wysiwyg-amine.meddour">
+                  <iconify-icon icon="cib:github"></iconify-icon>
+                </a>
+            </div>
+            <div class="projets-cliquable-div">
+                <div class="titre-projets">puissance4</div>
+                <div class="description-projets">Création d'un puissance 4</div>
+                <div class="screen-projets">
+                  <img src="./assets/images/settings_puissance4.png" alt="" srcset="">
+                  <img src="./assets/images/gameState_puissance4.png" alt="" srcset="">
+                </div>
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-JSC-501-PAR-1-1-puissance4-amine.meddour">
+                  <iconify-icon icon="cib:github"></iconify-icon>
+                </a>
+            </div>
+            <div class="projets-cliquable-div">
+                <div class="titre-projets">Battleship</div>
+                <div class="description-projets">Création d'une  bataille navale</div>
+                <div class="screen-projets">
+                  <img src="./assets/images/placementShip_battleship.png" alt="" srcset="">
+                  <img src="./assets/images/shipPlaced_battleship.png" alt="" srcset="">
+                </div>
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-JSC-501-PAR-1-1-battleship-mohand.leghima">
+                  <iconify-icon icon="cib:github"></iconify-icon>
+                </a>
+            </div>
+            <div class="projets-cliquable-div">
+                <div class="titre-projets">Responsive</div>
+                <div class="description-projets">Création d'un site responsive</div>
+                <div class="screen-projets">
+                  <img src="./assets/images/acceuil_responsive.png" alt="" srcset="">
+                </div>
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-INT-501-PAR-1-1-responsive-amine.meddour">
+                  <iconify-icon icon="cib:github"></iconify-icon>
+                </a>
+            </div>
+            </div>
+            
+            <div id="projects">
+              <div class="projets-cliquable-div">
+                <div class="titre-projets">Maquetteintro</div>
+                <div class="description-projets">Création d'un site vitrine en HTML , CSS</div>
+                <div class="screen-projets">
+                  <img src="./assets/images/mobileFormat_responsive.png" alt="" srcset="">
+                </div>
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-INT-501-PAR-1-1-maquetteintro-amine.meddour">
+                  <iconify-icon icon="cib:github"></iconify-icon>
+                </a>
+            </div>
+            <div class="projets-cliquable-div">
+                <div class="titre-projets">Frameworkcss</div>
+                <div class="description-projets">Création d'un css fait avec un préprocesseur (SCSS)</div>
+                <div class="screen-projets">
+                  <img src="./assets/images/bootstrap_framework_css_top.png" alt="" srcset="">
+                </div>
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-INT-501-PAR-1-1-frameworkcss-amine.meddour">
+                  <iconify-icon icon="cib:github"></iconify-icon>
+                </a>
+            </div>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+        <!-- ou me trouver -->
+    </section>
+
+    <!-- me contacter -->
+    
+    <!-- Contactez moi -->
+    <section id="contactez-moi">
+          <div id="inputs">
+            <h1>Contactez-moi</h1>
+            <label for="nom">Nom</label>
+            <div>
+              <input type="text" name="nom" placeholder="nom" />
+            </div>
+
+            <label for="prenom">Prenom</label>
+            <div>
+              <input type="text" name="prenom" placeholder="prenom" />
+            </div>
+            
+            <label for="email">Email</label>
+            <div>
+              <input type="email" name="email" placeholder="email" />
+            </div>
+            
+            <label for="message">Message</label>
+            <div>
+              <textarea
+                type="text"
+                name="message"
+                placeholder="message"
+                rows="3"
+              ></textarea>
+            </div>
+
+            <button onclick="sendEmail()">Envoyer</button>
+
+          </div>
+    </section>
+
+    <footer>
+      <div class="container">
+          <div id="footer">
+            <p>Copyright &copy; 2023 by Amine || All Rights Reserved</p>
+          </div>
+      </div>
+    </footer>
+
+    <script src="./assets/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+  </body>
+</html>
