@@ -10,9 +10,9 @@ let buttonBurger = document.querySelector('.burger');
 //     navbar.classList.toggle('active'); 
 // }
 
-window.onscroll = () => {
-      navbar.classList.remove('show-nav');
-      buttonBurger.classList.remove('show-nav');
+// window.onscroll = () => {
+      // navbar.classList.remove('show-nav');
+      // buttonBurger.classList.remove('show-nav');
 //     let header = document.querySelector('.header');
 
 //     header.classList.toggle('sticky', window.scroll > 100);
@@ -28,15 +28,14 @@ window.onscroll = () => {
 //   setTimeout(function(){
 //     menuBtn.classList.remove("is--clicked");
 //   }, 300);
-  }
+  // }
 
 function toggleMenu(){
   const navbar = document.querySelector('.navbar');
   let buttonBurger = document.querySelector('.burger');
-
   buttonBurger.addEventListener('click', function(){
       navbar.classList.toggle('show-nav');
-      buttonBurger.classList.toggle('show-nav');
+      buttonBurger.classList.toggle('active');
   })
 }
 
