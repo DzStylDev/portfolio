@@ -5,6 +5,10 @@ const navbar = document.querySelector('.navbar');
 let navLinks = document.querySelectorAll('header nav a');
 let buttonBurger = document.querySelector('.burger');
 
+navLinks.forEach(link => link.onclick = () => {
+  navbar.classList.toggle('show-nav');
+  buttonBurger.classList.toggle('active');
+})
 // menuIcon.onclick = () => {
 //     menuIcon.classList.toggle('bx-x');
 //     navbar.classList.toggle('active'); 

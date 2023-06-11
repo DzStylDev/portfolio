@@ -5,43 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Portfolio</title>
 
-     <!-- // function emailSend(){
-      //     let textFile = null;
-      //     let data = new Blob([
-      //       "To:dzstyler@outlook.fr",
-      //       "Subject: Email Javascript",
-      //       'X-Unsent: 1',
-      //       'Content-Type: text/html',
-      //       "<!DOCTYPE html><html><head></head><body><h1>Simple Email</h1></body></html>"
-      //     ], { type: 'text/plain'});
-
-      //     if(textFile !== null){
-      //       window.URL.revokeObjectURL(textFile);
-      //     }
-      //     textFile = window.URL.createObjectURL(data);
-
-      //     let a = document.createElement('a');
-      //     let linkText = document.createTextNode('fileLink');
-      //     a.appendChild(linkText);
-      //     a.href = textFile;
-      //     a.id = 'fileLink';
-      //     a.download = "Email Javascript.eml";
-      //     a.style.visibility = 'hidden';
-      //     document.body.appendChild(a);
-      //     document.getElementById('fileLink').click();
-          
-      //     return textFile;
-      // }
-      -->   
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-      <script type="text/javascript">
+    <script defer src="./assets/intersectionObserver.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
       
       (function(){
       emailjs.init("FzLvEiKzHsgugTxS4");
    })();
-
+  </script>
+  <script>
     function sendEmail(){
       let params = {
         name: document.getElementById('name').value,
@@ -49,15 +25,15 @@
         message: document.getElementById('message').value
       }
 
-      const serviceId = "";
-      const templateId = "";
+      const serviceId = "service_hp47kym";
+      const templateId = "template_l6yv4ik";
 
       emailjs.send(serviceId, templateId, params)
       .then(res => {
-        document.getElementById('name').value = "",
-        document.getElementById('email').value = "",
-        document.getElementById('message').value = ""
-      })
+        document.getElementById('name').value = "";
+        document.getElementById('email').value = "";
+        document.getElementById('message').value = "";
+      })  
       .catch(err => console.log(err))
     }
   </script>
@@ -74,17 +50,10 @@
             <ul>
               <li><a href="#about-me">A propos de moi</a></li>
               <li><a href="#Where-can-i-be-found">Où me trouver</a></li>
-              <li><a href="#download-cv">Télécharger mon cv</a></li>
-              <li><a href="#my-compétences">Mes compétences</a></li>
-              <li><a href="#my-formation">Mes formations</a></li>
-              <li>
-                <a href="#my-experiences-pro"
-                  >Mes expériences professionnelles</a
-                >
-              </li>
-              <li><a href="#projets-cliquable">Mes projets</a></li>
-              <li><a href="#hobbies">Centres d'intérêts</a></li>
-              <li><a href="#langues">Langues</a></li>
+              <li><a href="#diplômes_expérience_professionnel">Diplômes et expériences professionnelles</a></li>
+              <li><a href="#my-compétences">Compétences</a></li>
+              <li><a href="#my-experiences-pro">Projets</a></li>
+              <li><a href="#centre_intérets_languages">Centres d'intérêts et langues</a></li>
               <li><a href="#contactez-moi">Contactez-moi</a></li>
             </ul>
           </div>
@@ -94,7 +63,12 @@
 
     <!-- section à propos de moi -->
 
-    <section id="about-me">
+    <section id="about-me" class="hidden" 
+    data-aos="fade-up" 
+    data-aos-anchor-placement="center-bottom"
+    data-aos-easing="linear"
+    data-aos-duration="1200">
+    >
       <div class="container">
         <!-- div a propos de moi-->
           <!-- présentation de vous , votre charactère , votre phrase d'accroche , photo de qualité professionnelle  -->
@@ -131,9 +105,82 @@
               </div>
   
           </div>
+
+            
+        </div>
+  
+      </div>
+    </section>
+
+    <!-- section ou me trouver  -->
+    <section id="Where-can-i-be-found" class="hidden" 
+    data-aos="fade-down"
+    data-aos-anchor-placement="bottom-bottom"
+    data-aos-duration="1200"
+    >
+    <div class="container">
+        
+        <div class="me">
+          <!-- présentation de vous , votre charactère , votre phrase d'accroche , photo de qualité professionnelle  -->
+
+          <div id="my-coordinates">
+            <h1>Coordonnées</h1>
+            
+            <div class="coordonnées">
+              <div>amine.meddour@<span>epitech</span>.eu</div>
+              <!-- <div>0781604614</div> -->
+            </div>
+
+            <h1>Réseaux professionnels</h1>
+
+            <div id="my-professional-social-network">
+              
+            <div class="icons-center">
+                <h2>Indeed</h2>
+                <iconify-icon
+                  icon="simple-icons:indeed"
+                  style="color: #0c32a7"
+                ></iconify-icon>
+            </div>
+
+             <div class="icons-center">
+              <h2>linkedin</h2> 
+              <iconify-icon icon="devicon:linkedin"></iconify-icon>
+            </div>
+
+            <div class="icons-center">
+                <h2>Github</h2>
+                <a href="https://github.com/DzStylDev" target="_blank"><iconify-icon icon="devicon:github"></iconify-icon></a>
+            </div>
+
+            </div>
+
+            <h1>Recherche d'emploi actuelle</h1>
+            <p>Recherche actuellement une alternance de 14 mois</p>
+
+          </div>
           
-          <div id="experiences-pro-div">
-            <h1>Mes expériences professionnelles</h1>
+        </div>
+    </div>
+
+    </section>
+
+    <!-- section diplôme et expérience professionnel -->
+    <section id="diplômes_expérience_professionnel" class="hidden">
+      <div class="container">
+
+       
+        <div class="parentofde">
+
+    <div id="my-formation" data-aos="fade-left" data-aos-duration="1200">
+            <h1>Diplômes</h1>
+            <div>2022 / 2024 : DEVELOPPEUR-INTEGRATEUR WEB (Titre 5 RNCP - BAC +2) Web@cademie by EPITECH - Paris</div>
+            <div>2018 / 2019 : BAC PRO Electrotechnique Lycée Louis ARDMAND - Paris</div>
+            <div>2016 / 2017 : BEP Electrotechnique Lycée Louis ARDMAND - Paris</div>
+          </div>
+  
+          <div id="experiences-pro-div" data-aos="fade-right" data-aos-duration="1200">
+            <h1>Expériences professionnelles</h1>
             <div>
               2018 - Stage de 8 semaines en Electrotechnique à Energilec,
               Saint-Cloud . Compréhension d'un schéma éléctrique
@@ -152,149 +199,93 @@
             </div>
           </div>
 
-            
+
         </div>
-          
-        <div class="me">
-            <!-- présentation de vous , votre charactère , votre phrase d'accroche , photo de qualité professionnelle  -->
-  
-            <div id="my-coordinates">
-              <h1>Mes coordonnées</h1>
-              <div class="coordonnées">
-                <div>amine.meddour@epitech.eu</div>
-                <!-- <div>0781604614</div> -->
-              </div>
-  
-              <h1>Mes réseaux professionnelles</h1>
-  
-              <div id="my-professional-social-network">
-                
-                <div class="icons-center">
-                  <h2>Indee</h2>
-                  <iconify-icon
-                    icon="simple-icons:indeed"
-                    style="color: #0c32a7"
-                  ></iconify-icon>
-                </div>
-  
-                <div class="icons-center">
-                  <h2>linkedin</h2>
-                  <iconify-icon icon="devicon:linkedin"></iconify-icon>
-                </div>
-  
-                <div class="icons-center">
-                  <h2>Github</h2>
-                  <a href="https://github.com/DzStylDev"><iconify-icon icon="devicon:github"></iconify-icon></a>
-                </div>
-              </div>
-  
-              <div id="findEmploi">
-                <h1>Ma recherche d'emploi actuelle</h1>
-                <div>Développeur Full Stack</div>
-              </div>
-  
-            </div>
-  
-            
-            <div id="my-formation">
-              <h1>Mes formations</h1>
-              <div>2022 / 2024 : DEVELOPPEUR-INTEGRATEUR WEB (Titre 5 RNCP - BAC +2) Web@cademie by EPITECH - Paris</div>
-              <div>2018 / 2019 : BAC PRO Electrotechnique Lycée Louis ARDMAND - Paris</div>
-              <div>2016 / 2017 : BEP Electrotechnique Lycée Louis ARDMAND - Paris</div>
-            </div>
-            
-        </div>
-  
-        <div class="me">
-            
-            <div id="my-compétences">
-              <h1>Mes compétences</h1>
-                
-              <ul class="compétences">
-                
-                <!-- Icones groupe 1 -->
-
-                <!-- <div id="icons_g1"> -->
-
-                  <div class="langues-dev">
-                    <iconify-icon icon="logos:react"></iconify-icon>
-                    <h2>React</h2>
-                  </div>
-
-                  <div class="langues-dev">
-                    <iconify-icon icon="skill-icons:laravel-light"></iconify-icon>
-                    <h2>Laravel</h2>
-                  </div>
-
-                  <div class="langues-dev">
-                    <iconify-icon icon="devicon:php"></iconify-icon>
-                    <h2>PHP</h2>
-                  </div>
-
-                  <div class="langues-dev">
-                    <iconify-icon icon="vscode-icons:file-type-light-symfony"></iconify-icon>
-                    <h2>Symfony</h2>
-                  </div>
-
-                  <div class="langues-dev">
-                    <iconify-icon icon="logos:html-5"></iconify-icon>
-                    <h2>HTML</h2>
-                  </div>
-
-                  <div class="langues-dev">
-                    <iconify-icon icon="logos:css-3"></iconify-icon>
-                    <h2>CSS</h2>
-                  </div>
-
-                  <div class="langues-dev">
-                    <iconify-icon icon="logos:javascript"></iconify-icon>
-                    <h2>Javascript</h2>
-                  </div>
-
-                  <div class="langues-dev">
-                    <iconify-icon icon="vscode-icons:file-type-typescript-official"></iconify-icon>
-                    <h2>Typescript</h2>
-                  </div>
-
-                  <div class="langues-dev">
-                    <iconify-icon icon="logos:bootstrap"></iconify-icon>
-                    <h2>Bootstrap</h2>
-                  </div>
-                  <div class="langues-dev">
-                    <iconify-icon icon="logos:git"></iconify-icon> 
-                    <h2>Git</h2>
-                  </div>
-              </ul>
-  
-            </div>
-            <div id="hobbies">
-              <h1>Centre d'intérêts</h1>
-              <div>Informatique</div>
-              <div>Sport (Football , karaté , taekwondo)</div>
-            </div>
-            <div id="langues">
-              <h1>Langues</h1>
-              <div>Anglais : intermédiaire</div>
-              <div>Arabe : courant</div>
-            </div>
-            
-        </div>
-  
-      </div>
-
-        <!-- ou me trouver -->
         
       </div>
     </section>
 
-    <section id="my-experiences-pro">
+      <!-- section ompétences-->
+      <section id="compétences" class="hidden" data-aos="flip-right" data-aos-duration="1200" data-aos-easing="ease-in-out">
+        <div class="container">
+              
+              <div id="my-compétences">
+                <h1>Compétences</h1>  
+                  
+                <ul class="compétences">
+                  
+                  <!-- Icones groupe 1  -->
+  
+                  <div id="icons_g1"> 
+  
+                    <div class="langues-dev">
+                      <iconify-icon icon="logos:react"></iconify-icon>
+                      <h2>React</h2>
+                    </div>
+  
+                    <div class="langues-dev">
+                      <iconify-icon icon="skill-icons:laravel-light"></iconify-icon>
+                      <h2>Laravel</h2>
+                    </div>
+  
+                    <div class="langues-dev">
+                      <iconify-icon icon="devicon:php"></iconify-icon>
+                      <h2>PHP</h2>
+                    </div>
+  
+                    <div class="langues-dev">
+                      <iconify-icon icon="vscode-icons:file-type-light-symfony"></iconify-icon>
+                      <h2>Symfony</h2>
+                    </div>
+  
+                    <div class="langues-dev">
+                      <iconify-icon icon="logos:html-5"></iconify-icon>
+                      <h2>HTML</h2>
+                    </div>
+  
+                    <div class="langues-dev">
+                      <iconify-icon icon="logos:css-3"></iconify-icon>
+                      <h2>CSS</h2>
+                    </div>
+  
+                    <div class="langues-dev">
+                      <iconify-icon icon="logos:javascript"></iconify-icon>
+                      <h2>Javascript</h2>
+                    </div>
+  
+                    <div class="langues-dev">
+                      <iconify-icon icon="vscode-icons:file-type-typescript-official"></iconify-icon>
+                      <h2>Typescript</h2>
+                    </div>
+  
+                    <div class="langues-dev">
+                      <iconify-icon icon="logos:bootstrap"></iconify-icon>
+                      <h2>Bootstrap</h2>
+                    </div>
+                    <div class="langues-dev">
+                      <iconify-icon icon="logos:git"></iconify-icon> 
+                      <h2>Git</h2>
+                    </div>
+    
+                  </div>
+  
+                  </ul>
+              </div>
+        </div>
+      </section>
+
+    <!-- section projets -->
+    <section id="my-experiences-pro" class="hidden" data-aos="zoom-in-right" data-aos-duration="1200" data-aos-easing="ease-in-out">
 
       <div class="container">
         
         <div class="me">
 
           <div id="experiences-pro-div">
-            <h1>Mes Projets</h1>
+            
+            <div id="projects-title">
+              <h1>Projets</h1>
+            </div>
 
             <div id="projects">
               
@@ -304,7 +295,7 @@
                 <div class="screen-projets">
                   <img src="./assets/images/sprite.png" alt="sprite" srcset="">
                 </div>
-                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-501-PAR-1-1-cssgenerator-amine.meddour">
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-501-PAR-1-1-cssgenerator-amine.meddour" target="_blank">
                   <iconify-icon icon="cib:github"></iconify-icon>
                 </a>
               </div>
@@ -314,7 +305,7 @@
                 <div class="screen-projets">
                   <img src="./assets/images/acceuil_mycinema.png" alt="" srcset="">
                 </div>
-                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-501-PAR-1-1-mycinema-amine.meddour">
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-501-PAR-1-1-mycinema-amine.meddour" target="_blank">
                   <iconify-icon icon="cib:github"></iconify-icon>
                 </a>
               </div>
@@ -324,7 +315,7 @@
                 <div class="screen-projets">
                   <img src="./assets/images/myh5ai.png" alt="" srcset="">
                 </div>
-                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-501-PAR-1-1-myh5ai-amine.meddour">
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-501-PAR-1-1-myh5ai-amine.meddour" target="_blank">
                   <iconify-icon icon="cib:github"></iconify-icon>
                 </a>
               </div>
@@ -334,7 +325,7 @@
                 <div class="screen-projets">
                   <img src="./assets/images/acceuil_mymeetic.png" alt="" srcset="">
                 </div>
-                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-501-PAR-1-1-mymeetic-amine.meddour">
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-501-PAR-1-1-mymeetic-amine.meddour" target="_blank">
                   <iconify-icon icon="cib:github"></iconify-icon>
                 </a>
               </div>
@@ -347,14 +338,14 @@
                 <div class="screen-projets">
                   <img src="./assets/images/Freeads.png" alt="" srcset="">
                 </div>
-                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-502-PAR-2-2-FreeAds-amine.meddour">
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-502-PAR-2-2-FreeAds-amine.meddour" target="_blank">
                   <iconify-icon icon="cib:github"></iconify-icon>
                 </a>
               </div>
               <div class="projets-cliquable-div">
                 <div class="titre-projets">PiePHP</div>
                 <div class="description-projets">Création d'un site en MVC</div>
-                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-502-PAR-2-2-PiePHP-amine.meddour">
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-502-PAR-2-2-PiePHP-amine.meddour" target="_blank">
                   <iconify-icon icon="cib:github"></iconify-icon>
                 </a>
               </div>
@@ -364,7 +355,7 @@
                   <div class="screen-projets">
                     <img src="assets/images/acceuil_myquizz.png" alt="" srcset="">
                   </div>
-                  <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-502-PAR-2-2-Quiz-louisa.hadjili">
+                  <a href="https://github.com/EpitechWebAcademiePromo2024/W-PHP-502-PAR-2-2-Quiz-louisa.hadjili" target="_blank">
                   <iconify-icon icon="cib:github"></iconify-icon>
                 </a>
               </div>
@@ -372,10 +363,9 @@
                   <div class="titre-projets">Spotify</div>
                   <div class="description-projets">Création d'un spotify avec l'api Swagger</div>
                   <div class="screen-projets">
-                    <img src="./assets/images/listingAlbum_spotify.png" alt="" srcset="">
                     <img src="./assets/images/détailAlbum_spotify.png" alt="" srcset="">
                   </div>
-                  <a href="https://github.com/EpitechWebAcademiePromo2024/W-WEB-090-PAR-1-1-spotify-sabri.rehouni">
+                  <a href="https://github.com/EpitechWebAcademiePromo2024/W-WEB-090-PAR-1-1-spotify-sabri.rehouni" target="_blank">
                   <iconify-icon icon="cib:github"></iconify-icon>
                 </a>
               </div>
@@ -388,7 +378,7 @@
                 <div class="screen-projets">
                   <img src="./assets/images/wysiwyg.png" alt="" srcset="">
                 </div>
-                <a href="https://github.com/EpitechWebAcademiePromo2024/W-WEB-090-PAR-1-1-wysiwyg-amine.meddour">
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-WEB-090-PAR-1-1-wysiwyg-amine.meddour" target="_blank">
                   <iconify-icon icon="cib:github"></iconify-icon>
                 </a>
             </div>
@@ -396,10 +386,9 @@
                 <div class="titre-projets">puissance4</div>
                 <div class="description-projets">Création d'un puissance 4</div>
                 <div class="screen-projets">
-                  <img src="./assets/images/settings_puissance4.png" alt="" srcset="">
                   <img src="./assets/images/gameState_puissance4.png" alt="" srcset="">
                 </div>
-                <a href="https://github.com/EpitechWebAcademiePromo2024/W-JSC-501-PAR-1-1-puissance4-amine.meddour">
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-JSC-501-PAR-1-1-puissance4-amine.meddour" target="_blank">
                   <iconify-icon icon="cib:github"></iconify-icon>
                 </a>
             </div>
@@ -407,10 +396,9 @@
                 <div class="titre-projets">Battleship</div>
                 <div class="description-projets">Création d'une  bataille navale</div>
                 <div class="screen-projets">
-                  <img src="./assets/images/placementShip_battleship.png" alt="" srcset="">
                   <img src="./assets/images/shipPlaced_battleship.png" alt="" srcset="">
                 </div>
-                <a href="https://github.com/EpitechWebAcademiePromo2024/W-JSC-501-PAR-1-1-battleship-mohand.leghima">
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-JSC-501-PAR-1-1-battleship-mohand.leghima" target="_blank">
                   <iconify-icon icon="cib:github"></iconify-icon>
                 </a>
             </div>
@@ -420,7 +408,7 @@
                 <div class="screen-projets">
                   <img src="./assets/images/acceuil_responsive.png" alt="" srcset="">
                 </div>
-                <a href="https://github.com/EpitechWebAcademiePromo2024/W-INT-501-PAR-1-1-responsive-amine.meddour">
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-INT-501-PAR-1-1-responsive-amine.meddour" target="_blank"> 
                   <iconify-icon icon="cib:github"></iconify-icon>
                 </a>
             </div>
@@ -433,7 +421,7 @@
                 <div class="screen-projets">
                   <img src="./assets/images/mobileFormat_responsive.png" alt="" srcset="">
                 </div>
-                <a href="https://github.com/EpitechWebAcademiePromo2024/W-INT-501-PAR-1-1-maquetteintro-amine.meddour">
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-INT-501-PAR-1-1-maquetteintro-amine.meddour" target="_blank">
                   <iconify-icon icon="cib:github"></iconify-icon>
                 </a>
             </div>
@@ -443,7 +431,7 @@
                 <div class="screen-projets">
                   <img src="./assets/images/bootstrap_framework_css_top.png" alt="" srcset="">
                 </div>
-                <a href="https://github.com/EpitechWebAcademiePromo2024/W-INT-501-PAR-1-1-frameworkcss-amine.meddour">
+                <a href="https://github.com/EpitechWebAcademiePromo2024/W-INT-501-PAR-1-1-frameworkcss-amine.meddour" target="_blank">
                   <iconify-icon icon="cib:github"></iconify-icon>
                 </a>
             </div>
@@ -457,45 +445,74 @@
         <!-- ou me trouver -->
     </section>
 
-    <!-- me contacter -->
-    
+    <!-- section centre d'intérêts et langeus parlées -->
+
+    <section id="centre_intérets_languages" class="hidden">
+      <div class="container">
+
+       
+        <div class="parentofcl">
+
+          <div id="hobbies" data-aos="zoom-in-up" data-aos-duration="3600" data-aos-easing="ease-in-out">
+            <h1>Centre d'intérêts</h1>
+            <div>Informatique</div>
+            <div>Sport (Football , karaté , taekwondo)</div>
+          </div>
+          
+          <div id="langues" data-aos="zoom-in-down" data-aos-duration="3600" data-aos-easing="ease-in-out">
+            <h1>Langues</h1>
+            <div>Anglais : intermédiaire</div>
+            <div>Arabe : courant</div>
+          </div>
+
+        </div>
+        
+      </div>
+    </section>
     <!-- Contactez moi -->
-    <section id="contactez-moi">
-          <div id="inputs">
-            <h1>Contactez-moi</h1>
-            <label for="nom">Nom</label>
+    <section id="contactez-moi" class="hidden">
+      <div class="container">
+        <div id="inputs">
+          <h1>Contactez-moi</h1>
+
+          <div data-aos="fade-left" data-aos-duration="1200">
             <div>
-              <input type="text" name="nom" placeholder="nom" />
+              <label for="name">Nom</label>
+              <input type="text" id="name" name="name" placeholder="nom" />
             </div>
 
-            <label for="prenom">Prenom</label>
             <div>
-              <input type="text" name="prenom" placeholder="prenom" />
+              <label for="prenom">Prenom</label>
+              <input type="text" id="prenom" name="prenom" placeholder="prenom" />
             </div>
             
-            <label for="email">Email</label>
             <div>
-              <input type="email" name="email" placeholder="email" />
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="email" />
             </div>
             
-            <label for="message">Message</label>
             <div>
+              <label for="message">Message</label>
               <textarea
                 type="text"
                 name="message"
+                id="message"
                 placeholder="message"
                 rows="3"
               ></textarea>
             </div>
 
-            <button onclick="sendEmail()">Envoyer</button>
+            <a href="#" onclick="sendEmail()"><button>Envoyer</button></a>
 
           </div>
+
+        </div>
+      </div>
     </section>
 
-    <footer>
+    <footer class="hidden">
       <div class="container">
-          <div id="footer">
+          <div id="footer" data-aos="fade-down" data-aos-duration="5000" data-aos-easing="ease-in-out">
             <p>Copyright &copy; 2023 by Amine || All Rights Reserved</p>
           </div>
       </div>
@@ -503,6 +520,8 @@
 
     <script src="./assets/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.7/dist/iconify-icon.min.js"></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

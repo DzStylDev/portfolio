@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&family=Poppins:wght@100&display=swap');
+
 * {
   scroll-behavior: smooth;
   outline: none;
   border: none;
   box-sizing: border-box;
+  font-family: 'Manrope', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 :root {
   --couleur-titre: #384266;
@@ -13,13 +17,15 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: mintcream;
 }
 .container {
   overflow: hidden;
   display: flex;
-  justify-content: space-around;
   margin-top: 1.7em;
   text-align: center;
+  flex-direction: column;
+  align-items: center;
 }
 /*  navbar */
 .navbar {
@@ -28,10 +34,11 @@ body {
   position: fixed;
   width: 100%;
   top: 0;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   background-color: #384266;
   color: white;
+  z-index: 99999;
 }
 .logo {
   font-size: 1.5rem;
@@ -111,48 +118,52 @@ body {
   color: mintcream;
   margin: 1em;
   padding: 1em;
-  border: 1px solid mintcream;
 }
 #about-me .me {
   background-color: var(--couleur_fond);
-  width: 40%;
+  max-width: 500px;
   overflow: hidden;
   text-align: center;
-  border: 1px solid black;
-  margin: 1em 1em;
+  padding: 0.5em;
 }
 #about-me .me #a_propos_de_moi {
   margin-bottom: 1em;
+}
+#a_propos_de_moi h1 {
+  border-radius: 20px;
+  transform: translateX(120px);
+  width: 50%;
 }
 #about-me .me #my-experiences-pro {
   margin-top: 1em;
 }
 #about-me .me h1 {
   color: mintcream;
-  background-color: var(--couleur-titre);
-  padding: 0.5em;
-  border-top: 1px solid mintcream;
-  border-bottom: 1px solid mintcream;
+  background-color: #142048;
+  padding: 0.2em;
 }
 /** Curriculum vitae */
 #about-me .me #download-cv-div button {
   background-color: var(--couleur-titre);
-  padding: 1em;
+  padding: 0.6em;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
   color: mintcream;
   transition: all 0.3s ease-in-out;
+  font-size: 1em;
+  font-weight: 700;
+  border-radius: 20px;
 }
 #about-me .me #download-cv-div button:hover {
-  color: var(--couleur-titre);
+  color: var(--couleur_fond);
   background-color: mintcream;
   cursor: pointer;
 }
 
 #about-me .me #photo-professionnelle img {
   width: 40%;
-  border: 1px solid mintcream;
   border-radius: 60%;
   background-color: var(--couleur-titre);
+  border: 1px solid mintcream;
 }
 #about-me .me #metier {
   color: mintcream;
@@ -160,14 +171,43 @@ body {
 }
 #about-me .me p {
   margin: 1em 2em;
-  border: 1px solid mintcream;
   color: mintcream;
   text-align: center;
   padding: 1em;
   background-color: var(--couleur-titre);
 }
-.me #my-coordinates {
-  width: 100%;
+/** Section ou me trouver */
+#Where-can-i-be-found .me {
+  max-width: 500px;
+  background-color: var(--couleur_fond);
+  width: 500%;
+}
+#my-coordinates {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#my-coordinates p {
+  color: mintcream;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+#my-coordinates h1 {
+  color: mintcream;
+  background-color: #142048;
+  padding: 0.4em;
+  border-radius: 20px;
+}
+#my-coordinates .coordonnées {
+  color: mintcream;
+  font-size: 23px;
+}
+.coordonnées div {
+  font-size: 1em;
+  font-weight: 700;
+}
+.coordonnées span {
+  color:blue;
 }
 .me #my-coordinates #findEmploi {
   background-color: var(--couleur_fond);
@@ -178,32 +218,115 @@ body {
   color: mintcream;
   padding: 1em;
 }
-#my-coordinates .coordonnées {
-  background-color: var(--couleur-titre);
-  color: mintcream;
-  background-color: var(--couleur-titre);
-  padding: 1em;
-  margin: 1em;
-  border: 1px solid mintcream;
-}
-#my-professional-social-network {
-  background-color: var(--couleur-titre);
+/* section diplôme et expérience professionnel */
+
+#diplômes_expérience_professionnel .parentofde {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  gap: 3em;
+  justify-content: space-between;
+  max-width: 834px;
 }
-#my-professional-social-network .icons-center {
-  background-color: var(--couleur_fond);
-  border: 1px solid mintcream;
-  width: 40%;
-  margin: 0 3px;
+#diplômes_expérience_professionnel #experiences-pro-div {
+  background: #586594;
+  width: 116%;
+  padding: 1em;
+}
+#diplômes_expérience_professionnel #my-formation div {
+  background: #384266;
+  color: mintcream;
+  margin-top: 1em;
+}
+#diplômes_expérience_professionnel #experiences-pro-div div {
+  background: #384266;
+  color: mintcream;
+  margin-top: 1em;
+}
+#diplômes_expérience_professionnel #my-formation {
+  width: 93%;
+  background: #586594;
+  padding: 1em;
+}
+#diplômes_expérience_professionnel #my-formation h1 {
+  color: mintcream;
+  padding: 0.2em;
+  background-color: #142048;
+  border-radius: 20px;
+}
+#diplômes_expérience_professionnel #experiences-pro-div h1 {
+  color: mintcream;
+  padding: 0.2em;
+  background-color: #142048;
+  border-radius: 20px;
+}
+/* section centre d'intérêts et lanugues */
+#centre_intérets_languages .parentofcl {
+  display: flex;
+  gap: 3em;
+  justify-content: space-between;
+  max-width: 834px;
+}
+
+#centre_intérets_languages #hobbies {
+  background: #586594;
+  width: 116%;
+  padding: 1em;
+}
+#centre_intérets_languages #hobbies div {
+  background: #384266;
+  color: mintcream;
+  margin-top: 1em;
+}
+#centre_intérets_languages #langues div {
+  background: #384266;
+  color: mintcream;
+  margin-top: 1em;
+}
+#centre_intérets_languages #langues {
+  width: 93%;
+  background: #586594;
+  padding: 1em;
+}
+#centre_intérets_languages #hobbies h1 {
+  color: mintcream;
+  padding: 0.2em;
+  background-color: #142048;
+  border-radius: 20px;
+}
+#centre_intérets_languages #langues h1 {
+  color: mintcream;
+  padding: 0.2em;
+  background-color: #142048;
+  border-radius: 20px;
+}
+
+#my-professional-social-network {
+  display: flex;
+  justify-content: space-around;
+  gap: 2em;
+}
+#my-professional-social-network p {
+  font-family: monospace;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+#my-professional-social-network h1 {
+  font-size: 1.4em;
+  font-weight: 600;
+  font-family: monospace;
+  border-radius: 20px;
+  color: mintcream;
+}
+#my-professional-social-network .icons-center h2 {
+  color: mintcream;
+  background-color: #9fb4fd;
+  padding: 0.4em;
+  border-radius: 20px;
 }
 #my-professional-social-network .icons-center iconify-icon {
-  font-size: 25px;
-  border: 1px solid mintcream;
+  font-size: 20px;
   border-radius: 60%;
-  padding: 0.6em;
-  background-color: var(--couleur-titre);
+  padding: 0.9em;
+  background-color: #9fb4fd;
 }
 #my-professional-social-network .icons-center iconify-icon:hover {
   background-color: mintcream;
@@ -211,11 +334,17 @@ body {
   transition: all 0.3s ease-in-out;
   border-color: black;
 }
-#my-professional-social-network .icons-center h2 {
+/* section compétences */
+#compétences #my-compétences {
   color: mintcream;
-  background-color: var(--couleur-titre);
-  border-top: 1px solid mintcream;
-  border-bottom: 1px solid mintcream;
+  padding: 0.5em;
+  background-color: #142048;
+  border-radius: 20px;
+  max-width: 616px;
+}
+#compétences #my-compétences h1 {
+  margin: 0;
+  padding: 0.2em;
 }
 ul.compétences {
   background-color: var(--couleur-titre);
@@ -225,15 +354,25 @@ ul.compétences {
   flex-wrap: wrap;
   padding: 0;
 }
+ul.compétences #icons_g1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 .langues-dev {
   margin: 1em 4px;
   background: var(--couleur_fond);
   padding: 0.5em;
   transition: all 0.3s;
+  display: flex;
   cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .langues-dev:hover {
-  background-color: mintcream;
+  background-color: #1d284d;
   cursor: pointer;
 }
 .langues-dev:hover h2 {
@@ -247,7 +386,7 @@ ul.compétences {
   background: mintcream;
   color: var(--couleur-titre);
   font-weight: 700;
-  padding: 2px;
+  width: 100%;
 }
 
 /* formations */
@@ -257,7 +396,6 @@ ul.compétences {
   color: mintcream;
   margin: 1em;
   padding: 1em;
-  border: 1px solid mintcream;
 }
 /* Centre Interêts */
 #about-me .me #hobbies div {
@@ -265,7 +403,6 @@ ul.compétences {
   color: mintcream;
   margin: 1em;
   padding: 1em;
-  border: 1px solid mintcream;
 }
 /* langues */
 #about-me .me #langues div {
@@ -273,7 +410,6 @@ ul.compétences {
   color: mintcream;
   margin: 1em;
   padding: 1em;
-  border: 1px solid mintcream;
 }
 /* Formation */
 .me #my-formation div {
@@ -281,16 +417,18 @@ ul.compétences {
   color: mintcream;
   margin: 1em;
   padding: 1em;
-  border: 1px solid mintcream;
+}
+#projects-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* section experiences-pro */
 #my-experiences-pro .me {
   background-color: var(--couleur_fond);
-  width: 100%;
+  width: 60%;
   overflow: hidden;
   text-align: center;
-  border: 1px solid black;
-  margin: 1em 1em;
 }
 #my-experiences-pro .me #experiences-pro-div #projects {
   display: flex;
@@ -299,10 +437,10 @@ ul.compétences {
 }
 #my-experiences-pro .me #experiences-pro-div h1 {
   color: mintcream;
-  background-color: var(--couleur-titre);
-  border-top: 1px solid mintcream;
-  border-bottom: 1px solid mintcream;
+  background-color: #142048;
   padding: 0.5em;
+  width: 33%;
+  border-radius: 20px;
 }
 #my-experiences-pro
   .me
@@ -312,8 +450,6 @@ ul.compétences {
   color: mintcream;
   background-color: var(--couleur-titre);
   padding: 0.5em;
-  border-top: 1px solid mintcream;
-  border-bottom: 1px solid mintcream;
   text-align: center;
 }
 #my-experiences-pro
@@ -337,7 +473,6 @@ ul.compétences {
 #projects .projets-cliquable-div iconify-icon {
   font-size: 45px;
   cursor: pointer;
-  border: 1px solid mintcream;
   border-radius: 50px;
   padding: 0.2em;
   background-color: var(--couleur-titre);
@@ -355,28 +490,81 @@ ul.compétences {
 #projects .projets-cliquable-div iconify-icon:hover h2 {
   color: mintcream;
 }
-/* contact */
-#contactez-moi {
-  text-align: center;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transition: all 0.6s ease-in-out;
+}
+.show {
+  opacity: 1;
+  filter: blur(0);
+}
+/* section contact */
+#contactez-moi h1 {
+  color: mintcream;
+  background-color: #142048;
+  padding: 0.2em;
+  width: 46%;
+  border-radius: 20px;
 }
 #contactez-moi #inputs {
-  background-color: var(--couleur-titre);
-  width: 45%;
-  padding: 1em;
+  width: 512px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-#contactez-moi #inputs input {
+#contactez-moi #inputs div {
+  display: flex;
+  flex-direction: column;
+  width: 99%;
+  margin-top: 0.5em;
+}
+#contactez-moi #inputs input,
+#contactez-moi #inputs textarea {
   padding: 1em;
   border: none;
+  color: mintcream;
   width: 100%;
+  background-color: #384266;
+  font-weight: 900;
+  font-size: 1em;
+}
+#contactez-moi #inputs input:focus,
+#contactez-moi #inputs textarea:focus {
+  color: mintcream;
 }
 #contactez-moi #inputs label {
   color: mintcream;
   background-color: var(--couleur_fond);
   padding: 0.5em;
+}
+#contactez-moi #inputs button {
+  background-color: #1d284d;
+  padding: 0.6em;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  color: mintcream;
+  transition: all 0.3s ease-in-out;
+  font-size: 1.2em;
+  font-weight: 700;
+  border-radius: 20px;
+  margin-top: 1em
+}
+#contactez-moi #inputs div button:hover {
+  background-color: var(--couleur_fond);
+  color: mintcream;
+  cursor: pointer;
+}
+/* footer */
+#footer {
+  color: mintcream;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+#footer p {
+  margin-top: 2em;
+  padding: 1.2em;
+  background: #586594;
 }
 @media (max-width: 1040px) {
   .navbar {
@@ -407,7 +595,6 @@ ul.compétences {
     position: absolute;
     width: 0;
     top: 49px;
-    right: 0;
     background-color: #384266;
     transition: all 0.5s ease-in-out;
   }
@@ -438,7 +625,6 @@ ul.compétences {
   }
   #about-me .me #my-compétences .compétences li a {
     background-color: var(--couleur_fond);
-    border: 1px solid black;
   }
   #about-me .me #my-compétences .compétences li {
     padding: 6px;
@@ -448,5 +634,74 @@ ul.compétences {
   }
   #my-experiences-pro .me #experiences-pro-div #projects {
     flex-direction: column;
+  }
+  .parentofde {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #diplômes_expérience_professionnel #experiences-pro-div {
+    width: 93%;
+  }
+  /* #my-experiences-pro .me #experiences-pro-div h1 {
+    transform: translateX(125px);
+  } */
+}
+@media screen and (max-width: 700px) {
+  .langues-dev {
+    margin: 1em 4px;
+    background: var(--couleur_fond);
+    padding: 0.5em;
+    transition: all 0.3s;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .langues-dev iconify-icon {
+    width: 2.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .langues-dev h2 {
+    background: mintcream;
+    color: var(--couleur-titre);
+    font-weight: 700;
+    padding: 2px;
+  }
+  #compétences #my-compétences {
+    color: mintcream;
+    padding: 0.5em;
+    background-color: #142048;
+    border-radius: 20px;
+    max-width: 450px;
+    margin: 1em;
+  }
+  ul.compétences {
+    background-color: var(--couleur-titre);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  ul.compétences #icons_g1 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  #centre_intérets_languages .parentofcl {
+    display: flex;
+    gap: 3em;
+    flex-direction: column;
+    align-items: center;
+    max-width: 834px  ;
+  }
+  #centre_intérets_languages #langues {
+    width: 115%;
   }
 }
